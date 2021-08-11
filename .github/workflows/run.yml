@@ -1,0 +1,22 @@
+name: Run on all OSes
+
+on:
+  push:
+
+jobs:
+  run-all:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    name: Ron on ${{ matrix.os }}
+
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v2
+
+      - name: Run
+        run: python3 main.py
