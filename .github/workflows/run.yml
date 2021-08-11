@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
-    name: Ron on ${{ matrix.os }}
+    name: Run on ${{ matrix.os }}
 
     steps:
       - name: Checkout latest code
